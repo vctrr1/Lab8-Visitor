@@ -28,4 +28,13 @@ public class MaximizeFig implements VisitorFG{
         return 0;
     }
 
+	@Override
+	public double visitTrapezoid(Trapezoid t) {
+		t.setLargerBase(2 * t.getLargerBase());
+        t.setSmallerBase(2 * t.getSmallerBase());
+        t.setSideA(2 * t.getSideA());
+        t.setSideB(2 * t.getSideB());
+		return 0;
+	}
+
 }

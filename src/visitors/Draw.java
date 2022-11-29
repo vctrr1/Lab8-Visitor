@@ -3,6 +3,7 @@ package visitors;
 import interfaces.VisitorFG;
 import models.Circle;
 import models.Rectangle;
+import models.Trapezoid;
 import models.Triangle;
 
 public class Draw implements VisitorFG{
@@ -24,5 +25,11 @@ public class Draw implements VisitorFG{
         System.out.println("Desenhando um " + r.getClass() + " de area: " + (r.getWidth() * r.getHeigth()));
         return 0;
     }
+
+	@Override
+	public double visitTrapezoid(Trapezoid t) {
+		System.out.println("Desenhando um " + t.getClass() + " de perimetro : " + (t.getLargerBase() + t.getSmallerBase() + t.getSideA() + t.getSideB()));
+		return 0;
+	}
     
 }
