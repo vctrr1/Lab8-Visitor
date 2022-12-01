@@ -7,6 +7,13 @@ public class Trapezoid {
     public Trapezoid(double smallerBase, double largerBase, double sideA, double sideB) throws Exception {
         if (smallerBase == largerBase || smallerBase == largerBase && sideA == sideB)
             throw new Exception();
+
+        if (smallerBase > largerBase){
+            double temp = smallerBase;
+            smallerBase = largerBase;
+            largerBase = temp;
+        }
+
         this.smallerBase = smallerBase;
         this.largerBase = largerBase;
         this.sideA = sideA;

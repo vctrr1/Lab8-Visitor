@@ -19,7 +19,7 @@ public class CalculateArea implements VisitorFG {
 
     @Override
     public double visitRectangle(Rectangle r) {
-        return r.getWidth() * r.getHeigth();
+        return r.getWidth() * r.getHeight();
     }
 
     @Override
