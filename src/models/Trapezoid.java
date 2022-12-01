@@ -4,7 +4,9 @@ public class Trapezoid {
 
     private double smallerBase, largerBase, sideA, sideB;
 
-    public Trapezoid(double smallerBase, double largerBase, double sideA, double sideB) {
+    public Trapezoid(double smallerBase, double largerBase, double sideA, double sideB) throws Exception {
+        if (smallerBase == largerBase || smallerBase == largerBase && sideA == sideB)
+            throw new Exception();
         this.smallerBase = smallerBase;
         this.largerBase = largerBase;
         this.sideA = sideA;
@@ -42,5 +44,5 @@ public class Trapezoid {
     public void setSideB(double sideB) {
         this.sideB = sideB;
     }
-    
+
 }
