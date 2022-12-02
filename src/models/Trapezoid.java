@@ -1,6 +1,8 @@
 package models;
 
-public class Trapezoid {
+import interfaces.*;
+
+public class Trapezoid implements ConcreteElement {
 
     private double smallerBase, largerBase, sideA, sideB;
 
@@ -53,6 +55,11 @@ public class Trapezoid {
 
     public void setSideB(double sideB) {
         this.sideB = sideB;
+    }
+
+    @Override
+    public void acceptV(VisitorFG v) {
+        v.visitTrapezoid(this);
     }
 
 }

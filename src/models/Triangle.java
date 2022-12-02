@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Arrays;
+
 import interfaces.ConcreteElement;
 import interfaces.VisitorFG;
 
@@ -8,7 +10,11 @@ public class Triangle implements ConcreteElement {
     private double a, b, c;
 
     private boolean checkValidity(double a, double b, double c) {
-        return (a + b <= c || a + c <= b || b + c <= a);
+        double[] arr = { a, b, c };
+        Arrays.sort(arr);
+
+        return (a + b <= c || a + c <= b || b + c <= a
+                || Math.pow(arr[2], 2) == Math.pow(arr[1], 2) + Math.pow(arr[0], 2));
 
     }
 
