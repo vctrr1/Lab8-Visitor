@@ -1,13 +1,12 @@
-package tests.unit.visitors;
+package unit.visitors;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 import org.junit.Before;
 
-
 import models.*;
+import visitors.Draw;
 
 public class DrawTest {
 
@@ -15,42 +14,42 @@ public class DrawTest {
     private static Rectangle rect;
     private static Trapezoid trapezoid;
     private static Triangle triangle;
+    private static Draw draw;
 
     @Before
-    public void init() throws Exception{
-        circle = new Circle(52);
-        rect = new Rectangle(10, 30);
-        trapezoid = new Trapezoid(10, 20, 5, 30);
-        triangle = new Triangle(12, 8, 8);
+    public void init() throws Exception {
+        circle = new Circle(5); // 62.83
+        rect = new Rectangle(2, 2);        
+        trapezoid = new Trapezoid(16, 26, 13, 13);
+        triangle = new Triangle(3, 4, 5);
+        draw = new Draw();
 
     }
 
     @Test
-    public void testVisitRectangle() throws ArithmeticException {
-      
-       
+    public void testVisitRectangle() {
+        rect.acceptV(draw);
+        assertEquals("Desenhando um Rectangle de area: 4.0", draw.visitRectangle(rect));
+
     }
 
     @Test
     public void testVisitCircle() {
-        
-        assertEquals(12, circle.getRadius(), 1000);
-        //assertNotEquals(52.0, 10.0, 1000);
+        circle.acceptV(draw);
+        assertEquals("Desenhando um Circle de raio: 5.0", draw.visitCircle(circle));
     }
 
     @Test
     public void testVisitTriangle() {
-        
-        assertEquals(12, triangle.getA(), 1000);
-        //assertNotEquals(52.0, 10.0, 1000);
+        triangle.acceptV(draw);
+        assertEquals("Desenhando um Triangle com as medidas: 3.0|4.0|5.0", draw.visitTriangle(triangle));
+        // assertNotEquals(52.0, 10.0, 1000);
     }
 
     @Test
     public void testVisitTrapezoid() {
-        
-        assertEquals(12, triangle.getA(), 1000);
-        //assertNotEquals(52.0, 10.0, 1000);
+        trapezoid.acceptV(draw);
+        assertEquals("Desenhando um Trapezoid de perímetro : 68.0", draw.visitTrapezoid(trapezoid));
     }
 
-   
 }

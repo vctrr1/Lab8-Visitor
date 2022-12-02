@@ -1,4 +1,4 @@
-package tests.unit.models;
+package unit.models;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -13,14 +13,14 @@ public class RectangleTest {
     public void testGetWidth() throws ArithmeticException {
         Rectangle rectangle = new Rectangle(10, 20);
         
-        assertEquals(10, rectangle.getWidth(), 1000);
+        assertEquals(10, rectangle.getWidth(), 0.1);
     }
 
     @Test
     public void testGetHeight() throws ArithmeticException {
         Rectangle rectangle = new Rectangle(10, 20);
         
-        assertEquals(20, rectangle.getHeight(), 1000);
+        assertEquals(20, rectangle.getHeight(), 0.1);
     }
 
     @Test
@@ -29,8 +29,8 @@ public class RectangleTest {
         rectangle.setWidth(12);
         
         
-        assertEquals(12, rectangle.getWidth(), 1000);
-        //assertNotEquals(12.0, 10.0, 1000);
+        assertEquals(12, rectangle.getWidth(), 0.1);
+        //assertNotEquals(12.0, 10.0, 0.1);
     }
 
     @Test

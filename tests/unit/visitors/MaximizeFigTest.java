@@ -1,13 +1,13 @@
-package tests.unit.visitors;
+package unit.visitors;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 import org.junit.Before;
 
 
 import models.*;
+import visitors.*;
 
 public class MaximizeFigTest {
 
@@ -15,40 +15,40 @@ public class MaximizeFigTest {
     private static Rectangle rect;
     private static Trapezoid trapezoid;
     private static Triangle triangle;
+    private static MaximizeFig maximizeFig;
 
     @Before
     public void init() throws Exception{
-        circle = new Circle(52);
-        rect = new Rectangle(10, 30);
-        trapezoid = new Trapezoid(10, 20, 5, 30);
-        triangle = new Triangle(12, 8, 8);
+        circle = new Circle(5); // 62.83
+        rect = new Rectangle(2, 2);        
+        trapezoid = new Trapezoid(16, 26, 13, 13);
+        triangle = new Triangle(3, 4, 5);
+        maximizeFig = new MaximizeFig();
 
     }
 
     @Test
-    public void testVisitRectangle() throws ArithmeticException {
-      
-       
+    public void testVisitRectangle() {
+        assertEquals("New Height: 4.0 | New Widht: 4.0", maximizeFig.visitRectangle(rect));
     }
 
     @Test
     public void testVisitCircle() {
         
-        assertEquals(12, circle.getRadius(), 1000);
+        assertEquals("New Radius: 10.0", maximizeFig.visitCircle(circle));
         //assertNotEquals(52.0, 10.0, 1000);
     }
 
     @Test
     public void testVisitTriangle() {
-        
-        assertEquals(12, triangle.getA(), 1000);
+        assertEquals("New Side A: 6.0 | New Side B: 8.0 | New Side C: 10.0", maximizeFig.visitTriangle(triangle));
         //assertNotEquals(52.0, 10.0, 1000);
     }
 
     @Test
     public void testVisitTrapezoid() {
         
-        assertEquals(12, triangle.getA(), 1000);
+        assertEquals("New Larger Base: 52.0 | New Smaller Base: 32.0 | New Side A: 26.0 | New Side B: 26.0", maximizeFig.visitTrapezoid(trapezoid));
         //assertNotEquals(52.0, 10.0, 1000);
     }
 
