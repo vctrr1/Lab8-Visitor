@@ -4,37 +4,36 @@ import interfaces.VisitorFG;
 import models.*;
 
 
-public class MaximizeFig implements VisitorFG{
+public class MaximizeFig implements VisitorFG <String> {
 
     @Override
-    public double visitCircle(Circle c) {
+    public String visitCircle(Circle c) {
         c.setRadius(2 * c.getRadius());
-
-        return c.getRadius();
+        return "New Radius: " + c.getRadius();
     }
 
     @Override
-    public double visitTriangle(Triangle t) {
+    public String visitTriangle(Triangle t) {
         t.setA(2 * t.getA());
         t.setB(2 * t.getB());
         t.setC(2 * t.getC());
-        return 0;
+        return "New Side A: " + t.getA() + " |" + " New Side B: " + t.getB() + " |" + " New Side C: " + t.getC();
     }
 
     @Override
-    public double visitRectangle(Rectangle r) {
+    public String visitRectangle(Rectangle r) {
         r.setHeight(2 * r.getHeight());
         r.setWidth(2 * r.getWidth());
-        return 0;
+        return "New Height: " + r.getHeight() + " |" + " New Widht: " + r.getWidth();
     }
 
 	@Override
-	public double visitTrapezoid(Trapezoid t) {
+	public String visitTrapezoid(Trapezoid t) {
 		t.setLargerBase(2 * t.getLargerBase());
         t.setSmallerBase(2 * t.getSmallerBase());
         t.setSideA(2 * t.getSideA());
         t.setSideB(2 * t.getSideB());
-		return 0;
+		return "New Larger Base: " + t.getLargerBase() + " |" + " New Smaller Base: " + t.getSmallerBase() + " |" + " New Side A: " + t.getSideA() + " |" + " New Side B: " + t.getSideB();
 	}
 
 }
