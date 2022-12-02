@@ -17,7 +17,7 @@ public class CalculatePerimeter implements VisitorFG {
 
     @Override
     public double visitRectangle(Rectangle r) {
-        return 2 * (r.getWidth() + r.getHeigth());
+        return 2 * (r.getWidth() + r.getHeight());
     }
 
     @Override

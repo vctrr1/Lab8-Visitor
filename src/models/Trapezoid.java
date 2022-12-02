@@ -4,7 +4,19 @@ public class Trapezoid {
 
     private double smallerBase, largerBase, sideA, sideB;
 
-    public Trapezoid(double smallerBase, double largerBase, double sideA, double sideB) {
+    public Trapezoid(double smallerBase, double largerBase, double sideA, double sideB) throws ArithmeticException {
+        if (smallerBase == largerBase || smallerBase == largerBase && sideA == sideB)
+            throw new ArithmeticException("These value does not make a trapezoid.");
+
+        if (smallerBase <= 0 || largerBase <= 0 || sideA <= 0 || sideB <= 0)
+            throw new ArithmeticException("Each side must be greater than zero.");
+
+        if (smallerBase > largerBase) {
+            double temp = smallerBase;
+            smallerBase = largerBase;
+            largerBase = temp;
+        }
+
         this.smallerBase = smallerBase;
         this.largerBase = largerBase;
         this.sideA = sideA;
@@ -42,5 +54,5 @@ public class Trapezoid {
     public void setSideB(double sideB) {
         this.sideB = sideB;
     }
-    
+
 }

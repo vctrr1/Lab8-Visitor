@@ -22,7 +22,7 @@ public class Draw implements VisitorFG{
 
     @Override
     public double visitRectangle(Rectangle r) {
-        System.out.println("Desenhando um " + r.getClass() + " de area: " + (r.getWidth() * r.getHeigth()));
+        System.out.println("Desenhando um " + r.getClass() + " de area: " + (r.getWidth() * r.getHeight()));
         return 0;
     }
 

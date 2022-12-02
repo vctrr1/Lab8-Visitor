@@ -23,7 +23,7 @@ public class MaximizeFig implements VisitorFG{
 
     @Override
     public double visitRectangle(Rectangle r) {
-        r.setHeight(2 * r.getHeigth());
+        r.setHeight(2 * r.getHeight());
         r.setWidth(2 * r.getWidth());
         return 0;
     }

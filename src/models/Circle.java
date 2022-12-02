@@ -7,7 +7,8 @@ public class Circle implements ConcreteElement {
 
     private double radius;
 
-    public Circle(double radius) {
+    public Circle(double radius) throws ArithmeticException {
+        if(radius <= 0) throw new ArithmeticException("Radius must be greater than zero.");
         this.radius = radius;
     }
 

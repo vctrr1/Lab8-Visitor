@@ -3,7 +3,6 @@ package visitors;
 import interfaces.VisitorFG;
 import models.*;
 
-
 public class CalculateArea implements VisitorFG {
 
     @Override
@@ -20,13 +19,16 @@ public class CalculateArea implements VisitorFG {
 
     @Override
     public double visitRectangle(Rectangle r) {
-        return r.getWidth() * r.getHeigth();
+        return r.getWidth() * r.getHeight();
     }
+
     @Override
-    public double visitTrapezoid(Trapezoid t){
-        double h = 0;
-        
-        return ((t.getSmallerBase() + t.getLargerBase()) / 2) * h;
-        
+    public double visitTrapezoid(Trapezoid t) {
+        double a = t.getSmallerBase(), b = t.getLargerBase(), c = t.getSideA(), d = t.getSideB();
+        double c2 = Math.pow(c, 2);
+        double h = Math.sqrt(c2 - Math.pow((c2 - Math.pow(d, 2) + Math.pow(b - a, 2)) / 2 * (b - a), 2));
+
+        return ((a + b) / 2) * h;
+
     }
 }
