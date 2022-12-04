@@ -33,7 +33,7 @@ public class MaximizeFig implements VisitorFG <String> {
         t.setSmallerBase(2 * t.getSmallerBase());
         t.setSideA(2 * t.getSideA());
         t.setSideB(2 * t.getSideB());
-		return "New Larger Base: " + t.getLargerBase() + " |" + " New Smaller Base: " + t.getSmallerBase() + " |" + " New Side A: " + t.getSideA() + " |" + " New Side B: " + t.getSideB();
+		return "\nNew Larger Base: " + t.getLargerBase() + " |" + " New Smaller Base: " + t.getSmallerBase() + " |" + " New Side A: " + t.getSideA() + " |" + " New Side B: " + t.getSideB();
 	}
 
 }

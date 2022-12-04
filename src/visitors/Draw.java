@@ -15,17 +15,17 @@ public class Draw implements VisitorFG <String>{
 
     @Override
     public String visitTriangle(Triangle t) {
-        return "Desenhando um " + t.getClass().getSimpleName() + " com as medidas: " + t.getA() + "|" + t.getB() + "|" + t.getC();
+        return "Desenhando um " + t.getClass().getSimpleName() + " com as medidas: " + t.getA() + " | " + t.getB() + " | " + t.getC();
     }
 
     @Override
     public String visitRectangle(Rectangle r) {
-        return "Desenhando um " + r.getClass().getSimpleName() + " de area: " + (r.getWidth() * r.getHeight());
+        return "Desenhando um " + r.getClass().getSimpleName() + " de tamanho: " + r.getHeight() + " | " + r.getWidth();
     }
 
 	@Override
 	public String visitTrapezoid(Trapezoid t) {
-		return "Desenhando um " + t.getClass().getSimpleName() + " de perímetro : " + (t.getLargerBase() + t.getSmallerBase() + t.getSideA() + t.getSideB());
+		return "Desenhando um " + t.getClass().getSimpleName() + " de Tamanho : " + t.getLargerBase() + " | " + t.getSmallerBase() + " | " + t.getSideA() + " | " + t.getSideB();
 	}
     
 }
