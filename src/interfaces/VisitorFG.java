@@ -3,8 +3,8 @@ package interfaces;
 import models.*;
 
 public interface VisitorFG <T> {
-    public T visitCircle(Circle c);
-    public T visitTriangle(Triangle t);
-    public T visitRectangle(Rectangle r);
-    public T visitTrapezoid(Trapezoid t);
+    public T visit(Circle c);
+    public T visit(Triangle t);
+    public T visit(Rectangle r);
+    public T visit(Trapezoid t);
 }

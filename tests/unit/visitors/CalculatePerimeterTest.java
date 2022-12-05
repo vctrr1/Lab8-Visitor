@@ -29,24 +29,24 @@ public class CalculatePerimeterTest {
 
     @Test
     public void testVisitRectangle() throws ArithmeticException {
-        assertEquals(80, calculatePerimeter.visitRectangle(rect), 0);
+        assertEquals("80.0", calculatePerimeter.visit(rect));
     }
 
     @Test
     public void testVisitCircle() {
-        assertEquals(31, (calculatePerimeter.visitCircle(circle)), 1);
+        assertEquals("31.41592653589793", (calculatePerimeter.visit(circle)));
         // assertNotEquals(52.0, 10.0, 1000);
     }
 
     @Test
     public void testVisitTriangle() {
-        assertEquals(24, calculatePerimeter.visitTriangle(triangle), 0);
+        assertEquals("24.0", calculatePerimeter.visit(triangle));
         // assertNotEquals(52.0, 10.0, 1000);
     }
 
     @Test
     public void testVisitTrapezoid() {
-        assertEquals(65, calculatePerimeter.visitTrapezoid(trapezoid), 0);
+        assertEquals("65.0", calculatePerimeter.visit(trapezoid));
         // assertNotEquals(52.0, 10.0, 1000);
     }
 

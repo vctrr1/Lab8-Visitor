@@ -28,25 +28,25 @@ public class CalculateAreaTest {
 
     @Test
     public void testVisitRectangle() {
-        assertEquals(300, calculateArea.visitRectangle(rect), 1000);
+        assertEquals("300.0", calculateArea.visit(rect));
 
     }
 
     @Test
     public void testVisitCircle() {
-        assertEquals(Math.PI * Math.pow(circle.getRadius(), 2), calculateArea.visitCircle(circle), 1000);
+        assertEquals(String.valueOf(Math.PI * Math.pow(circle.getRadius(), 2)), calculateArea.visit(circle));
     }
 
     @Test
     public void testVisitTriangle() {
         triangle.acceptV(calculateArea);
-        assertEquals(24, calculateArea.visitTriangle(triangle), 1000);
+        assertEquals("24.0", calculateArea.visit(triangle));
         // assertNotEquals(52.0, 10.0, 1000);
     }
 
     @Test
     public void testVisitTrapezoid() {
-        assertEquals((double) 136500, calculateArea.visitTrapezoid(trapezoid), 1000);
+        assertEquals("136500.0", calculateArea.visit(trapezoid));
     }
 
 }

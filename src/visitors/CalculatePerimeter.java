@@ -3,26 +3,26 @@ package visitors;
 import interfaces.VisitorFG;
 import models.*;
 
-public class CalculatePerimeter implements VisitorFG <Double>{
+public class CalculatePerimeter implements VisitorFG<String> {
 
     @Override
-    public Double visitCircle(Circle c) {
-        return (2 * Math.PI) * c.getRadius();
+    public String visit(Circle c) {
+        return String.valueOf((2 * Math.PI) * c.getRadius());
     }
 
     @Override
-    public Double visitTriangle(Triangle t) {
-        return t.getA() + t.getB() + t.getC();
+    public String visit(Triangle t) {
+        return String.valueOf(t.getA() + t.getB() + t.getC());
     }
 
     @Override
-    public Double visitRectangle(Rectangle r) {
-        return 2 * (r.getWidth() + r.getHeight());
+    public String visit(Rectangle r) {
+        return String.valueOf(2 * (r.getWidth() + r.getHeight()));
     }
 
     @Override
-    public Double visitTrapezoid(Trapezoid t) {
-        return t.getLargerBase() + t.getSmallerBase() + t.getSideA() + t.getSideB();
+    public String visit(Trapezoid t) {
+        return String.valueOf(t.getLargerBase() + t.getSmallerBase() + t.getSideA() + t.getSideB());
     }
 
 }

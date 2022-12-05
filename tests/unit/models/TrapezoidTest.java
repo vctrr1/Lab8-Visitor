@@ -97,7 +97,7 @@ public class TrapezoidTest {
 
     @Test(expected = ArithmeticException.class)
     public void testInvalidTrapezoid() throws ArithmeticException {
-        Trapezoid trapezoid = new Trapezoid(500, 1, 2, 3);
+        Trapezoid trapezoid = new Trapezoid(1, 1,500, 3);
 
     }
 

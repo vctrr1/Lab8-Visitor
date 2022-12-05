@@ -31,7 +31,7 @@ public class Rectangle implements ConcreteElement {
     }
 
     @Override
-    public void acceptV(VisitorFG v) {
-        v.visitRectangle(this);
+    public String acceptV(VisitorFG v) {
+        return (String) v.visit(this);
     }
 }
