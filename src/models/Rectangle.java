@@ -23,11 +23,13 @@ public class Rectangle implements ConcreteElement {
     }
 
     public void setHeight(double height) {
-        this.height = height;
+        if (height >= 0)
+            this.height = height;
     }
 
     public void setWidth(double width) {
-        this.width = width;
+        if (width >= 0)
+            this.width = width;
     }
 
     @Override

@@ -8,7 +8,8 @@ public class Circle implements ConcreteElement {
     private double radius;
 
     public Circle(double radius) throws ArithmeticException {
-        if(radius <= 0) throw new ArithmeticException("Radius must be greater than zero.");
+        if (radius <= 0)
+            throw new ArithmeticException("Radius must be greater than zero.");
         this.radius = radius;
     }
 
@@ -17,12 +18,13 @@ public class Circle implements ConcreteElement {
     }
 
     public void setRadius(double radius) {
-        this.radius = radius;
+        if (radius >= 0)
+            this.radius = radius;
     }
 
     @Override
     public String acceptV(VisitorFG v) {
-       return (String) v.visit(this);
+        return (String) v.visit(this);
     }
 
 }

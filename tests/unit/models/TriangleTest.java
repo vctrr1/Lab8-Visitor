@@ -27,36 +27,6 @@ public class TriangleTest {
         assertEquals(6, triangle.getC(), 1000);
     }
 
-    @Test
-    public void testSetA() throws ArithmeticException {
-        Triangle triangle = new Triangle(10, 8, 6);
-
-        triangle.setA(11);
-
-        assertEquals(11, triangle.getA(), 1000);
-        assertNotEquals(((int) 10 * 1000), ((int) triangle.getA() * 1000));
-    }
-
-    @Test
-    public void testSetB() throws ArithmeticException {
-        Triangle triangle = new Triangle(10, 8, 6);
-
-        triangle.setB(11);
-
-        assertEquals(11, triangle.getB(), 1000);
-        assertNotEquals(((int) 10 * 1000), ((int) triangle.getB() * 1000));
-    }
-
-    @Test
-    public void testSetC() throws ArithmeticException {
-        Triangle triangle = new Triangle(10, 8, 6);
-
-        triangle.setC(11);
-
-        assertEquals(11, triangle.getC(), 1000);
-        assertNotEquals(((int) 10 * 1000), ((int) triangle.getC() * 1000));
-    }
-
     @Test(expected = ArithmeticException.class)
     public void testNegativeA() throws ArithmeticException {
         Triangle triangle = new Triangle(-5, 4, 3);
