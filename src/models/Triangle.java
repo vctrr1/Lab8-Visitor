@@ -10,12 +10,7 @@ public class Triangle implements ConcreteElement {
     private double a, b, c;
 
     private boolean checkValidity(double a, double b, double c) {
-        double[] arr = { a, b, c };
-        Arrays.sort(arr);
-
-        return (a + b <= c || a + c <= b || b + c <= a
-                || Math.pow(arr[2], 2) == Math.pow(arr[1], 2) + Math.pow(arr[0], 2));
-
+        return a + b > c && a + c > b && b + c > a;
     }
 
     public Triangle(double a, double b, double c) throws ArithmeticException {
@@ -53,7 +48,7 @@ public class Triangle implements ConcreteElement {
     }
 
     @Override
-    public void acceptV(VisitorFG v) {
-        v.visitTriangle(this);
+    public String acceptV(VisitorFG v) {
+        return (String) v.visit(this);
     }
 }

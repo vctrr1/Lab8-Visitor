@@ -29,27 +29,27 @@ public class DrawTest {
     @Test
     public void testVisitRectangle() {
         rect.acceptV(draw);
-        assertEquals("Desenhando um Rectangle de area: 4.0", draw.visitRectangle(rect));
+        assertEquals("Desenhando um Rectangle de tamanho: 2.0 | 2.0", draw.visit(rect));
 
     }
 
     @Test
     public void testVisitCircle() {
         circle.acceptV(draw);
-        assertEquals("Desenhando um Circle de raio: 5.0", draw.visitCircle(circle));
+        assertEquals("Desenhando um Circle de raio: 5.0", draw.visit(circle));
     }
 
     @Test
     public void testVisitTriangle() {
         triangle.acceptV(draw);
-        assertEquals("Desenhando um Triangle com as medidas: 3.0|4.0|5.0", draw.visitTriangle(triangle));
+        assertEquals("Desenhando um Triangle com as medidas: 3.0 | 4.0 | 5.0", draw.visit(triangle));
         // assertNotEquals(52.0, 10.0, 1000);
     }
 
     @Test
     public void testVisitTrapezoid() {
         trapezoid.acceptV(draw);
-        assertEquals("Desenhando um Trapezoid de perímetro : 68.0", draw.visitTrapezoid(trapezoid));
+        assertEquals("Desenhando um Trapezoid de tamanho : 26.0 | 16.0 | 13.0 | 13.0", draw.visit(trapezoid));
     }
 
 }

@@ -1,5 +1,5 @@
 package interfaces;
 
 public interface ConcreteElement {
-    public void acceptV(VisitorFG v);
+    public String acceptV(VisitorFG v);
 }

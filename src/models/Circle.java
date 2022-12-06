@@ -21,8 +21,8 @@ public class Circle implements ConcreteElement {
     }
 
     @Override
-    public void acceptV(VisitorFG v) {
-        v.visitCircle(this);
+    public String acceptV(VisitorFG v) {
+       return (String) v.visit(this);
     }
 
 }
