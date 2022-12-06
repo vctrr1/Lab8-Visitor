@@ -35,18 +35,6 @@ public class Triangle implements ConcreteElement {
         return this.c;
     }
 
-    public void setA(double a) {
-        this.a = a;
-    }
-
-    public void setB(double b) {
-        this.b = b;
-    }
-
-    public void setC(double c) {
-        this.c = c;
-    }
-
     @Override
     public String acceptV(VisitorFG v) {
         return (String) v.visit(this);

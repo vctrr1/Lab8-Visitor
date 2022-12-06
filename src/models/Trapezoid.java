@@ -41,22 +41,6 @@ public class Trapezoid implements ConcreteElement {
         return this.sideB;
     }
 
-    public void setLargerBase(double largerBase) {
-        this.largerBase = largerBase;
-    }
-
-    public void setSmallerBase(double smallerBase) {
-        this.smallerBase = smallerBase;
-    }
-
-    public void setSideA(double sideA) {
-        this.sideA = sideA;
-    }
-
-    public void setSideB(double sideB) {
-        this.sideB = sideB;
-    }
-
     @Override
     public String acceptV(VisitorFG v) {
         return (String) v.visit(this);

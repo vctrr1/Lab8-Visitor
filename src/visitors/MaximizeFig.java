@@ -3,8 +3,7 @@ package visitors;
 import interfaces.VisitorFG;
 import models.*;
 
-
-public class MaximizeFig implements VisitorFG <String> {
+public class MaximizeFig implements VisitorFG<String> {
 
     @Override
     public String visit(Circle c) {
@@ -14,10 +13,9 @@ public class MaximizeFig implements VisitorFG <String> {
 
     @Override
     public String visit(Triangle t) {
-        t.setA(2 * t.getA());
-        t.setB(2 * t.getB());
-        t.setC(2 * t.getC());
-        return "New Side A: " + t.getA() + " |" + " New Side B: " + t.getB() + " |" + " New Side C: " + t.getC();
+        Triangle t2 = new Triangle(2 * t.getA(), 2 * t.getB(), 2 * t.getC());
+
+        return "New Side A: " + t2.getA() + " |" + " New Side B: " + t2.getB() + " |" + " New Side C: " + t2.getC();
     }
 
     @Override
@@ -27,13 +25,12 @@ public class MaximizeFig implements VisitorFG <String> {
         return "New Height: " + r.getHeight() + " |" + " New Widht: " + r.getWidth();
     }
 
-	@Override
-	public String visit(Trapezoid t) {
-		t.setLargerBase(2 * t.getLargerBase());
-        t.setSmallerBase(2 * t.getSmallerBase());
-        t.setSideA(2 * t.getSideA());
-        t.setSideB(2 * t.getSideB());
-		return "New Larger Base: " + t.getLargerBase() + " |" + " New Smaller Base: " + t.getSmallerBase() + " |" + " New Side A: " + t.getSideA() + " |" + " New Side B: " + t.getSideB();
-	}
+    @Override
+    public String visit(Trapezoid t) {
+        Trapezoid t2 = new Trapezoid(2 * t.getLargerBase(), 2 * t.getSmallerBase(), 2 * t.getSideA(), 2 * t.getSideB());
+
+        return "New Larger Base: " + t2.getLargerBase() + " |" + " New Smaller Base: " + t2.getSmallerBase() + " |"
+                + " New Side A: " + t2.getSideA() + " |" + " New Side B: " + t2.getSideB();
+    }
 
 }

@@ -33,38 +33,6 @@ public class TrapezoidTest {
         assertEquals(13, trapezoid.getSideB(), 0.1);
     }
 
-    @Test
-    public void testSetSideA() throws ArithmeticException {
-        Trapezoid trapezoid = new Trapezoid(16, 26, 13, 13);
-        trapezoid.setSideA(15);
-        assertEquals(15, trapezoid.getSideA(), 0.1);
-        assertNotEquals(((int) 16 * 1000), ((int) trapezoid.getSideA() * 1000));
-    }
-
-    @Test
-    public void testSetSideB() throws ArithmeticException {
-        Trapezoid trapezoid = new Trapezoid(16, 26, 13, 13);
-        trapezoid.setSideB(15);
-        assertEquals(15, trapezoid.getSideB(), 0.1);
-        assertNotEquals(((int) 26 * 1000), ((int) trapezoid.getSideB() * 1000));
-    }
-
-    @Test
-    public void testSetSmallerBase() throws ArithmeticException {
-        Trapezoid trapezoid = new Trapezoid(16, 26, 13, 13);
-        trapezoid.setSmallerBase(15);
-        assertEquals(15, trapezoid.getSmallerBase(), 0.1);
-        assertNotEquals(((int) 16 * 1000), ((int) trapezoid.getSmallerBase() * 1000));
-    }
-
-    @Test
-    public void testSetLargerBase() throws ArithmeticException {
-        Trapezoid trapezoid = new Trapezoid(16, 26, 13, 13);
-        trapezoid.setLargerBase(25);
-        assertEquals(25, trapezoid.getLargerBase(), 0.1);
-        assertNotEquals(((int) 26 * 1000), ((int) trapezoid.getLargerBase() * 1000));
-    }
-
     @Test(expected = ArithmeticException.class)
     public void testNegativeSmallerBase() throws ArithmeticException {
         Trapezoid trapezoid = new Trapezoid(-16, 26, 13, 13);
@@ -97,7 +65,7 @@ public class TrapezoidTest {
 
     @Test(expected = ArithmeticException.class)
     public void testInvalidTrapezoid() throws ArithmeticException {
-        Trapezoid trapezoid = new Trapezoid(1, 1,500, 3);
+        Trapezoid trapezoid = new Trapezoid(1, 1, 500, 3);
 
     }
 
